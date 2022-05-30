@@ -1,44 +1,22 @@
-# class Solution:
-#     def longestPalindrome(self, s: str) -> str:
-#         if len(s) == 1 or not s:
-#             return s
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        if len(s) == 1 or not s:
+            return s
 
-#         test = True
-#         s_array = s.split()
+        test = True
+        s_array = list(s)
 
-#         while test:
-#             if s_array.reverse() == s_array:
-#                 test = False
-#                 return s_array
-#             else:
-#                 del s_array[-1]
-#                 del s_array[0]
-
-
-
-# def longestPalindrome(s):
-#         if len(s) == 1 or not s:
-#             return s
-
-#         test = True
-#         s_array = s.split()
-
-#         while test:
-#             if s_array.reverse() == s_array:
-#                 test = False
-#                 print(s_array)
-#             else:
-#                 s_array.pop()
-#                 s_array.pop(0)
+        while test:
+            if s_array[::-1] == s_array:
+                test = False
+                return "".join(s_array)
+            else:
+                s_array.pop()
+                s_array.pop(0)
 
 
-# longestPalindrome('babad')
 
+sol = Solution()
+print(sol.longestPalindrome('Enter String to be checked here'))
 
-arr = 'aba'
-array = arr.split()
-
-if array.reverse() == array:
-    print('true')
-
-print(array.reverse(), array)
+# Time complextitiy if 0(n) due to conecatation of string (Using methods .join and list())
